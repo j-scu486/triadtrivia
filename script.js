@@ -1,4 +1,7 @@
 
+// Load polySynth from Tone.js
+const polySynth = new Tone.PolySynth(Tone.Synth).toDestination();
+
 const selectContainer = document.querySelector('.selection-container');
 const startBtn = document.querySelector('.btn');
 const timerSelect = document.querySelector('.timer');
