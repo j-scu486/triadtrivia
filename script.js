@@ -18,26 +18,42 @@ const select1 = document.querySelector('.select-1');
 const select2 = document.querySelector('.select-2');
 const select3 = document.querySelector('.select-3');
 
+const levelSelect = document.querySelector('#level');
+
+// Options
 let start = true;
 let correctTriad = '';
 let timer = 0;
 let sharpFlat = "";
 let score = 0;
+let level = "maj"
 
 // Array / Object of possible triads and their correct triads
 const notes = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
-const triadArr = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
-const triadObj = {
-  'A': 'AC#E',
-  'B': 'BD#F#',
-  'C': 'CEG',
-  'D': 'DF#A',
-  'E': 'EG#B',
-  'F': 'FAC',
-  'G': 'GBD',
-}
+let triadArr = [];
+let triadObj = {};
 
+// Level Select
+// Initially set to maj
+triadArr = majTriadArr;
+triadObj = majTriads;
 
+levelSelect.addEventListener("click", function(e){
+  level = levelSelect.value;
+  switch(level){
+    case 'maj':
+      triadArr = majTriadArr;
+      triadObj = majTriads;
+      break
+    case 'min':
+      triadArr = minTriadArr;
+      triadObj = minTriads;
+      break
+    case 'maj-min':
+      triadArr = majTriadArr.concat(minTriadArr);
+      triadObj = {...majTriads, ...minTriads}
+  }
+})
 
 
 // Display current note.
@@ -174,6 +190,7 @@ function reset(){
     header.style.display = "block";
     incorrectSelect.style.visibility = "hidden";
     correctSelect.style.visibility = "hidden";
+    levelSelect.style.display = "block";
 }
 
 // Initialization
@@ -189,6 +206,7 @@ function init(){
   scoreDisplay.style.display = "none";
   messageDisplay.style.display = "none";
   header.style.display = "none";
+  levelSelect.style.display = "none";
   
   clearInputs();
   setTriad();
