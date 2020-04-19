@@ -101,27 +101,44 @@ button.btn:active {
     transform: translateY(5px);
 }
 
-button.btn-sound {
+.btn-sound-container {
   position: absolute;
-  bottom: 2%;
-  right: 2%;
-  padding: 10px;
-  text-transform: uppercase;
+  right: 5%;
+  bottom: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-sound-container span {
+  margin: 0 10px;
   font-weight: 600;
+  text-transform: uppercase;
+}
+
+button.btn-sound {
+  padding: 5px;
   color: var(--primary-color-1);
-  background-color: inherit;
-  border: 1px solid var(--primary-color-1);
+  border: 1px solid var(--primary-color-3);
   cursor: pointer;
   border-radius: 10px;
   transition: box-shadow 200ms;
 }
 
 button.btn-sound:hover {
-  box-shadow: 1px 1px 5px var(--primary-color-1)
+  box-shadow: 0.5px 0.5px 5px var(--primary-color-3)
 }
 
-.sound-off {
-  backgr
+button.btn-sound:focus {
+  outline: 0;
+}
+
+.active {
+  background-color: var(--primary-color-3);
+}
+
+.inactive {
+  background-color: inherit;
 }
 
 .timer {
@@ -190,7 +207,7 @@ button.btn-sound:hover {
 select {
   margin-top: 10px;
   padding: 10px;
-  border: 2px solid var(--primary-color-2);
+  border: 2px solid var(--primary-color-3);
   font-family: inherit;
   outline: none;
   border-radius: 10px;
@@ -198,7 +215,7 @@ select {
 }
 
 select:focus {
-  border: 2px solid var(--primary-color-3);
+  border: 2px solid var(--primary-color-2);
 }
 
 

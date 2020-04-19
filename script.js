@@ -19,6 +19,8 @@ const select2 = document.querySelector('.select-2');
 const select3 = document.querySelector('.select-3');
 
 const levelSelect = document.querySelector('#level');
+const soundSelect = document.querySelector('.btn-sound');
+const soundSelectContainer = document.querySelector('.btn-sound-container');
 
 // Options
 let start = true;
@@ -27,6 +29,7 @@ let timer = 0;
 let sharpFlat = "";
 let score = 0;
 let level = "maj"
+let sound = true;
 
 // Array / Object of possible triads and their correct triads
 const notes = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
@@ -55,6 +58,11 @@ levelSelect.addEventListener("click", function(e){
   }
 })
 
+// Sound Settings
+soundSelect.addEventListener("click", function(){
+  soundSelect.classList.toggle('inactive')
+  sound = !sound;
+})
 
 // Display current note.
 // Using the current note, search obj for corresponding triad and set this to correct answer in global var.
@@ -101,7 +109,8 @@ function checkAnswer(){
     setTriad();
     setCorrect();
     clearInputs();
-    playCorrect(answer);
+    if(sound === true) playCorrect(answer);
+
   } else {
     setIncorrect();
     clearInputs();
@@ -191,6 +200,7 @@ function reset(){
     incorrectSelect.style.visibility = "hidden";
     correctSelect.style.visibility = "hidden";
     levelSelect.style.display = "block";
+    soundSelectContainer.style.display = "flex";
 }
 
 // Initialization
@@ -207,6 +217,7 @@ function init(){
   messageDisplay.style.display = "none";
   header.style.display = "none";
   levelSelect.style.display = "none";
+  soundSelectContainer.style.display = "none";
   
   clearInputs();
   setTriad();
