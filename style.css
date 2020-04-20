@@ -1,21 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Josefin+Sans:wght@700&display=swap');
+
 :root {
-    --primary-color-1: #068a9c;
-    --primary-color-2: #770f10;
-    --primary-color-3: #d44a1e;
-    --secondary-color-1: #cab7ab;
-    --secondary-color-2: #83552d;
-    --background-color-1: #f7f7f7;
+  --primary-color-1: #068a9c;
+  --primary-color-2: #770f10;
+  --primary-color-3: #d44a1e;
+  --secondary-color-1: #cab7ab;
+  --secondary-color-2: #83552d;
+  --background-color-1: #f7f7f7;
 }
 
 body {
   font-family: 'Lato', sans-serif;  
+  color: rgb(59, 59, 59);
   background-color: var(--primary-color-1);
 }
 
 h1 {
-    font-family: 'Indie Flower', cursive;
+  font-family: 'Lato', sans-serif;  
     font-size: 4rem;
     margin-bottom: 0;
 }
@@ -34,17 +35,17 @@ h2 {
 }
 
 .content-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 5px solid var(--secondary-color-1);
-    border-radius: 10px;
-    width: 50%;
-    padding: 50px 0;  
-    background-color: var(--background-color-1);
-    position: relative;
-    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.5)
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid var(--secondary-color-1);
+  border-radius: 10px;
+  width: 50%;
+  padding: 50px 0;  
+  background-color: var(--background-color-1);
+  position: relative;
+  box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.5)
 }
 
 .selection-container {
@@ -84,7 +85,7 @@ button.btn{
   border-radius: 10px;
   border-style: none;
   cursor: pointer;
-  box-shadow: 1px 3px 5px var(--secondary-color-1);
+  box-shadow: 1px 3px 5px var(--primary-color-3);
   transition: transform 200ms, box-shadow 200ms;
   font-size: 1.5rem;
 }

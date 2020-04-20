@@ -73,15 +73,15 @@ function setTriad(){
 }
 
 // Timer
-    const timerFunc = setInterval(function(){
-        timerSelect.innerHTML = timer;
-        timer--;
-        if(timer === 0){
-            messageDisplay.innerText = "Game Over!";
-            scoreDisplay.innerText = "Your score: " + score;
-            reset();
-        }
-        },1000)
+const timerFunc = setInterval(function(){
+    timerSelect.innerHTML = timer;
+    timer--;
+    if(timer === 0){
+        messageDisplay.innerText = "Game Over!";
+        scoreDisplay.innerText = "Your score: " + score;
+        reset();
+    }
+    },1000)
 
 
 // Answer Input
@@ -203,9 +203,9 @@ function reset(){
     soundSelectContainer.style.display = "flex";
 }
 
-// Initialization
+// Start Game
 
-function init(){
+function startGame(){
   start = true;
   timer = 30;
   keycounter = 1;
@@ -224,4 +224,4 @@ function init(){
 }
 
 reset();
-startBtn.addEventListener("click", init)
+startBtn.addEventListener("click", startGame);
