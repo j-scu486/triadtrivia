@@ -19,7 +19,7 @@ const majTriads = {
   'C': 'CEG',
   'C#': 'C#E#G#',
   'D': 'DF#A',
-  'D#': 'DGA#',
+  'D#': 'D#GA#',
   'E': 'EG#B',
   'F': 'FAC',
   'F#': 'F#A#C#',
